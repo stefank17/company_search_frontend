@@ -1,0 +1,7 @@
+.card {
+	/* overflow: visible; */
+	width: 100%;
+	max-width: 15rem;
+	height: 10rem;
+	margin: 1rem;
+}
