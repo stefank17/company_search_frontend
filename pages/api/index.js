@@ -9,7 +9,6 @@ export const getPHP = async (name) => {
 		headers: h,
 	})
 		.then((response) => {
-			console.log("RES", response);
 			if (response.ok) {
 				return response.json();
 			} else {
