@@ -1,15 +1,10 @@
 import React from "react";
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CompanyCard from "../components/CompanyCard";
-import SearchForm from "../components/SearchForm";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
 import Pagination from "react-bootstrap/Pagination";
 import { getPHP } from "./api";
 
@@ -58,9 +53,6 @@ export default function Home() {
 
 	return (
 		<div className={styles.container}>
-			{/* Search Feature */}
-			{/* <SearchForm /> */}
-
 			<Navbar bg="dark" variant="dark" style={{ width: "100%" }}>
 				<div className={styles.navbarContent}>
 					<Navbar.Brand href="#">Stokkur</Navbar.Brand>
@@ -72,6 +64,7 @@ export default function Home() {
 
 			{/* Content */}
 			<div className={styles.main}>
+				{/* Search Feature */}
 				<div className={styles.searchForm}>
 					<Form style={{ maxWidth: "55rem" }}>
 						<Form.Group>
@@ -87,7 +80,7 @@ export default function Home() {
 				<div className={styles.cards}>
 					{/* List the companies */}
 					{pageData.map((comp, index) => {
-						return <CompanyCard key={comp.sn} comp={comp} styles={styles} />;
+						return <CompanyCard key={comp.sn} comp={comp} />;
 					})}
 				</div>
 
