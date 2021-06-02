@@ -26,18 +26,16 @@ export default function Home() {
 	}, [state]);
 
 	React.useEffect(() => {
-		setpageCount(Math.ceil(data.length / 10));
-
 		const tmpPageData = data.filter((company, index) => {
 			if (Math.ceil((index + 1) / 10) === Number(1)) {
 				return company;
 			}
 		});
 		setpageData(tmpPageData);
+		setpageCount(Math.ceil(data.length / 10));
 	}, [data]);
 
 	const handleChange = (e) => {
-		console.log(e.target.value);
 		setState(e.target.value);
 	};
 
@@ -55,7 +53,7 @@ export default function Home() {
 		<div className={styles.container}>
 			<Navbar bg="dark" variant="dark" style={{ width: "100%" }}>
 				<div className={styles.navbarContent}>
-					<Navbar.Brand href="#">Stokkur</Navbar.Brand>
+					<Navbar.Brand href="#">Stefank17</Navbar.Brand>
 					<Nav className="mr-auto">
 						<Nav.Link href="#">Search Companies</Nav.Link>
 					</Nav>
